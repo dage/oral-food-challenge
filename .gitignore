@@ -28,3 +28,4 @@ yarn-error.log*
 public/images/person
 src/daily-log-person.json
 helper-projects/make-example-images/node_modules
+.vscode
