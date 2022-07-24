@@ -1,0 +1,45 @@
+@import './common/_colors.scss';
+
+#ImageView {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    &.elimination {
+        background-color: $eliminationColor;
+    }
+
+    div {
+        padding: 5px;
+    }
+
+    .date {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .imageIndex {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .comment {
+        position: absolute;
+        border-top-right-radius: 0.2em;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+    }
+}

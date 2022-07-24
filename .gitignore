@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/food-trials/config/applicationhost.config
+.vs/food-trials/v16/.suo
+public/images/person
+src/daily-log-person.json
+helper-projects/make-example-images/node_modules

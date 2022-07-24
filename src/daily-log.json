@@ -1,0 +1,156 @@
+﻿{
+  "imagesBaseUri": "images/example/", 
+  "days": [    
+    {
+      "date": "23.07.2021",
+      "elimination": true,
+      "comment": "First elimination periode to get a baseline.",
+      "images": [ "23.07.2021-1.jpg", "23.07.2021-2.jpg", "23.07.2021-3.jpg" ]
+    },
+    {
+      "date": "24.07.2021",
+      "elimination": true,
+      "images": [ "24.07.2021-1.jpg", "24.07.2021-2.jpg", "24.07.2021-3.jpg" ]
+    },
+    {
+      "date": "25.07.2021",
+      "elimination": true,
+      "images": [ "25.07.2021-1.jpg", "25.07.2021-2.jpg", "25.07.2021-3.jpg" ]
+    },
+    {
+      "date": "26.07.2021",
+      "elimination": true,
+      "images": [ "26.07.2021-1.jpg", "26.07.2021-2.jpg", "26.07.2021-3.jpg" ]
+    },
+    {
+      "date": "27.07.2021",
+      "elimination": true,
+      "images": [ "27.07.2021-1.jpg", "27.07.2021-2.jpg", "27.07.2021-3.jpg" ]
+    },
+
+    {
+      "date": "28.07.2021",
+      "elimination": false,
+      "comment": "Chickpeas 50g",
+      "images": [ "28.07.2021-1.jpg", "28.07.2021-2.jpg", "28.07.2021-3.jpg" ]
+    },
+    {
+      "date": "29.07.2021",
+      "elimination": false,
+      "comment": "Chickpeas 100g",
+      "images": [ "29.07.2021-1.jpg", "29.07.2021-2.jpg", "29.07.2021-3.jpg" ]
+    },
+    {
+      "date": "30.07.2021",
+      "elimination": false,
+      "comment": "Chickpeas 200g",
+      "images": [ "30.07.2021-1.jpg", "30.07.2021-2.jpg", "30.07.2021-3.jpg" ]
+    },
+    {
+      "date": "31.07.2021",
+      "elimination": false,
+      "comment": "Chickpeas 200g",
+      "images": [ "31.07.2021-1.jpg", "31.07.2021-2.jpg", "31.07.2021-3.jpg" ]
+    },
+
+    {
+      "date": "01.08.2021",
+      "elimination": true,
+      "images": [ "01.08.2021-1.jpg", "01.08.2021-2.jpg", "01.08.2021-3.jpg" ]
+    },
+    {
+      "date": "02.08.2021",
+      "elimination": true,
+      "images": [ "02.08.2021-1.jpg", "02.08.2021-2.jpg", "02.08.2021-3.jpg" ]
+    },
+    {
+      "date": "03.08.2021",
+      "elimination": true,
+      "images": [ "03.08.2021-1.jpg", "03.08.2021-2.jpg", "03.08.2021-3.jpg" ]
+    },
+    {
+      "date": "04.08.2021",
+      "elimination": true,
+      "images": [ "04.08.2021-1.jpg", "04.08.2021-2.jpg", "04.08.2021-3.jpg" ]
+    },
+    {
+      "date": "05.08.2021",
+      "elimination": true,
+      "images": [ "05.08.2021-1.jpg", "05.08.2021-2.jpg", "05.08.2021-3.jpg" ]
+    },
+    {
+      "date": "06.08.2021",
+      "elimination": false,
+      "comment": "Eggplant 50g",
+      "images": [ "06.08.2021-1.jpg", "06.08.2021-2.jpg", "06.08.2021-3.jpg" ]
+    },
+    {
+      "date": "07.08.2021",
+      "elimination": false,
+      "comment": "Eggplant 100g",
+      "images": [ "07.08.2021-1.jpg", "07.08.2021-2.jpg", "07.08.2021-3.jpg" ]
+    },
+    {
+      "date": "08.08.2021",
+      "elimination": false,
+      "comment": "Eggplant 200g",
+      "images": [ "08.08.2021-1.jpg", "08.08.2021-2.jpg", "08.08.2021-3.jpg" ]
+    },
+    {
+      "date": "09.08.2021",
+      "elimination": false,
+      "comment": "Eggplant 200g",
+      "images": [ "09.08.2021-1.jpg", "09.08.2021-2.jpg", "09.08.2021-3.jpg" ]
+    },
+    {
+      "date": "10.08.2021",
+      "elimination": true,
+      "images": [ "10.08.2021-1.jpg", "10.08.2021-2.jpg", "10.08.2021-3.jpg" ]
+    },
+    {
+      "date": "11.08.2021",
+      "elimination": true,
+      "images": [ "11.08.2021-1.jpg", "11.08.2021-2.jpg", "11.08.2021-3.jpg" ]
+    },
+    {
+      "date": "12.08.2021",
+      "elimination": true,
+      "images": [ "12.08.2021-1.jpg", "12.08.2021-2.jpg", "12.08.2021-3.jpg" ]
+    },
+    {
+      "date": "13.08.2021",
+      "elimination": true,
+      "images": [ "13.08.2021-1.jpg", "13.08.2021-2.jpg", "13.08.2021-3.jpg" ]
+    },
+    {
+      "date": "14.08.2021",
+      "elimination": false,
+      "comment": "1 egg",
+      "images": [ "14.08.2021-1.jpg", "14.08.2021-2.jpg", "14.08.2021-3.jpg" ]
+    },
+    {
+      "date": "15.08.2021",
+      "elimination": false,
+      "comment": "2 eggs",
+      "images": [ "15.08.2021-1.jpg", "15.08.2021-2.jpg", "15.08.2021-3.jpg" ]
+    },
+    {
+      "date": "16.08.2021",
+      "elimination": false,
+      "comment": "4 eggs",
+      "images": [ "16.08.2021-1.jpg", "16.08.2021-2.jpg", "16.08.2021-3.jpg" ]
+    },
+    {
+      "date": "17.08.2021",
+      "elimination": false,
+      "comment": "6 eggs",
+      "images": [ "17.08.2021-1.jpg", "17.08.2021-2.jpg", "17.08.2021-3.jpg" ]
+    },
+    {
+      "date": "18.08.2021",
+      "elimination": false,
+      "comment": "6 eggs",
+      "images": [ "18.08.2021-1.jpg", "18.08.2021-2.jpg", "18.08.2021-3.jpg" ]
+    }
+  ]
+}

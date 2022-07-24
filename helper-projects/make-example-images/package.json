@@ -1,0 +1,12 @@
+{
+  "name": "make-example-images",
+  "version": "1.0.0",
+  "description": "A helper project for oral-food-challenge",
+  "main": "make-example-images.js",
+  "keywords": ["image", "image transformation", "anonymizing"],
+  "author": "Dag Erlandsen",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.30.7"
+  }
+}
