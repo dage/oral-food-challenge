@@ -1,36 +1,61 @@
+import { useSelector, useDispatch } from "react-redux";
+import { IState } from "../redux/reducer";
+import { setView, setImageIndex, setDayIndex } from "../redux/actions";
+import { ViewType } from "../components/DailyLog";
+
 import { useEffect } from "react";
 import IDay from "./IDay";
 import './ImageView.scss';
 const inside = require("point-inside-triangle");
 
-interface IImageViewProps {
-    imagesBaseUri: string,
-    day: IDay,
-    imageIndex: number,
-    exitImageView: Function,
-    goNextDay: Function,
-    goPreviousDay: Function,
-    goNextImageIndex: Function,
-    goPreviousImageIndex: Function
-}
+const ImageView = () => {
+    const dispatch = useDispatch();
+    const dailyLog = useSelector((state: IState) => state.dailyLog);
+    const dayIndex = useSelector((state: IState) => state.dayIndex);
+    const imageIndex = useSelector((state: IState) => state.imageIndex);
+    const day:IDay = dailyLog.days[dayIndex];
 
-const ImageView = (props: IImageViewProps) => {
+    const goNextDay = () => {
+        dispatch(setDayIndex(Math.min(dayIndex + 1, dailyLog.days.length - 1)));
+    }
+
+    const goPreviousDay = () => {
+        dispatch(setDayIndex(Math.max(dayIndex - 1, 0)));
+    }
+
+    const goNextImageIndex = () => {
+        dispatch(setImageIndex(Math.min(imageIndex + 1, getMaximumImageIndex())))
+    }
+
+    const goPreviousImageIndex = () => {
+        dispatch(setImageIndex(Math.max(0, imageIndex-1)));
+    }
+
+    const exitImageView = () => dispatch(setView(ViewType.Grid))
+
+
+    // Returns the maximum image index across all the days
+    const getMaximumImageIndex = () => {
+        const maxIndices = dailyLog.days.map((day:IDay) => day && day.images ? day.images.length : 0);
+        return Math.max(...maxIndices) - 1;
+    }
+
     const onKey = (event: KeyboardEvent) => {
         switch (event.key) {
             case "ArrowLeft":
-                props.goPreviousImageIndex();
+                goPreviousImageIndex();
                 break;
             case "ArrowRight":
-                props.goNextImageIndex();
+                goNextImageIndex();
                 break;
             case "ArrowUp":
-                props.goPreviousDay();
+                goPreviousDay();
                 break;
             case "ArrowDown":
-                props.goNextDay();
+                goNextDay();
                 break;
             case "Escape":
-                props.exitImageView();
+                exitImageView();
                 break;
             default:
                 break;
@@ -43,7 +68,7 @@ const ImageView = (props: IImageViewProps) => {
         event.preventDefault();
 
         if (!inOnImage) {
-            props.exitImageView();
+            exitImageView();
             return;
         }
 
@@ -62,22 +87,22 @@ const ImageView = (props: IImageViewProps) => {
         const point = [event.clientX - imageRect.left, event.clientY - imageRect.top];
 
         if(inside(topTriangle, point)) {
-            props.goPreviousDay();
+            goPreviousDay();
             return;
         }
 
         if(inside(bottomTriangle, point)) {
-            props.goNextDay();
+            goNextDay();
             return;
         }
 
         if(inside(rightTriangle, point)) {
-            props.goNextImageIndex();
+            goNextImageIndex();
             return;
         }
 
         if(inside(leftTriangle, point)) {
-            props.goPreviousImageIndex();
+            goPreviousImageIndex();
             return;
         }
     }
@@ -92,14 +117,14 @@ const ImageView = (props: IImageViewProps) => {
     });
 
     return (
-        <div className={props.day.elimination ? "elimination" : ""} id='ImageView'>
-            <div className="date">{props.day.date}</div>
-            <div className="imageIndex">{props.imageIndex}</div>
-            { props.day.comment && <div className="comment">{props.day.comment}</div> }
-            { props.day.images && props.day.images[props.imageIndex] &&
+        <div className={day.elimination ? "elimination" : ""} id='ImageView'>
+            <div className="date">{day.date}</div>
+            <div className="imageIndex">{imageIndex}</div>
+            { day.comment && <div className="comment">{day.comment}</div> }
+            { day.images && day.images[imageIndex] &&
                 <img
-                    src={process.env.PUBLIC_URL + props.imagesBaseUri + props.day.images[props.imageIndex]}
-                    alt=''
+                    src={process.env.PUBLIC_URL + dailyLog.imagesBaseUri + day.images[imageIndex]}
+                    alt='Person'
                 />
             }
         </div>

@@ -1,30 +1,27 @@
 import { Fragment } from "react";
-import dailyLog from "../daily-log.json";
 import './Grid.scss';
 import IDay from "./IDay";
 
-interface IGridProps {
-    imagesBaseUri: string;
-    startImageView: Function
-}
+import { setView, setImageIndex, setDayIndex } from "../redux/actions";
+import { IState } from "../redux/reducer";
+import { useSelector, useDispatch } from "react-redux";
+import { ViewType } from "../components/DailyLog";
 
 interface IGridRowProps {
-    imagesBaseUri: string,
     day: IDay
     rowIndex: number,
-    onClick: Function
 }
 
-const Grid = (props: IGridProps) => {
+const Grid = () => {
+    const dailyLog = useSelector((state: IState) => state.dailyLog);
+
     return (
         <div id='Grid'>
-            {dailyLog.days.map((d, i) =>
+            {dailyLog.days.map((day:IDay, i:number) =>
                 <GridRow                    
-                    imagesBaseUri={props.imagesBaseUri}
-                    day={d}
-                    key={d.date}
+                    day={day}
+                    key={day.date}
                     rowIndex={i}
-                    onClick={props.startImageView}
                 />)
             }
         </div>
@@ -33,6 +30,14 @@ const Grid = (props: IGridProps) => {
 
 const GridRow = (props: IGridRowProps) => {
     const eliminationClassName = props.day.elimination ? "elimination " : "";
+    const dispatch = useDispatch();
+    const dailyLog = useSelector((state: IState) => state.dailyLog);
+
+    const startImageView = (dayIndex: number, imageIndex: number) => {
+        dispatch(setView(ViewType.Image));
+        dispatch(setDayIndex(dayIndex));
+        dispatch(setImageIndex(imageIndex));
+    };
 
     return (
         <Fragment>
@@ -42,8 +47,8 @@ const GridRow = (props: IGridRowProps) => {
                     <div key={"image" + imageIndex} className='GridImageContainer'>
                         { image &&
                             <img
-                                src={image && process.env.PUBLIC_URL + props.imagesBaseUri + image}
-                                onClick={() => props.onClick(props.rowIndex, imageIndex)}
+                                src={image && process.env.PUBLIC_URL + dailyLog.imagesBaseUri + image}
+                                onClick={() => startImageView(props.rowIndex, imageIndex)}
                                 alt='' />
                         }
                     </div>

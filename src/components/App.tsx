@@ -1,9 +1,13 @@
 import './App.scss';
+import { Provider } from 'react-redux';
+import store  from '../redux/store';
 import DailyLog from './DailyLog';
 
 const App = () => {
     return (
-        <DailyLog />
+        <Provider store={store}>
+            <DailyLog />
+        </Provider>
     );
 }
 
